@@ -3,8 +3,6 @@ import os
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 
-from project.api.users import users_blueprint
-
 # Instantiate the db
 db = SQLAlchemy()
 
@@ -21,6 +19,7 @@ def create_app(script_info=None):
     db.init_app(app)
 
     # Register blueprints
+    from project.api.users import users_blueprint
     app.register_blueprint(users_blueprint)
 
     # Shell context for flask cli
