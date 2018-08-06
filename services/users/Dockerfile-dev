@@ -1,7 +1,7 @@
 # Base image
 FROM python:3.6.5-alpine
 
-# install dependencies
+# Install dependencies
 RUN apk update && \
     apk add --virtual build-deps gcc python-dev musl-dev && \
     apk add postgresql-dev && \
